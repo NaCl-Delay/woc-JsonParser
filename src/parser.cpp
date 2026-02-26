@@ -136,7 +136,7 @@ Json Parser::parse_object() {
         consume();
 
         // 3. 递归解析 Value (这里就是最神奇的地方！)
-        obj[key] = parse_value(); //map就是这样用的格式吗？
+        obj[key] = parse_value();
 
         // 4. 处理逗号
         if (lookahead.type == TokenType::Comma) {
