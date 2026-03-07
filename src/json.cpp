@@ -1,5 +1,5 @@
 //
-// Created by luolonghua on 2026/2/18.
+// Created by NaCl-Delay on 2026/2/18.
 //
 
 #include "json.h"
@@ -7,9 +7,7 @@
 #include <sstream>
 #include <iomanip>
 #include <stdexcept>
-#include <sstream>
 
-//报错未改
 // 取布尔值
 bool Json::as_bool() const {
     if (!is_bool()) throw std::runtime_error("Not a boolean");

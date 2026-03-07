@@ -1,5 +1,5 @@
 //
-// Created by luolonghua on 2026/2/18.
+// Created by NaCl-Delay on 2026/2/18.
 //
 
 #include "parser.h"
@@ -185,7 +185,17 @@ void Scanner::skip_whitespace() {
         advance();
 }
 
-Json Parser::parse()        { return parse_value(); }
+Json Parser::parse() {
+    Json result = parse_value();
+    if (lookahead.type != TokenType::EndInp) {
+        throw std::runtime_error(
+            "Line " + std::to_string(lookahead.line) +
+            ", Col " + std::to_string(lookahead.column) +
+            ": Unexpected token after top-level value");
+    }
+    return result;
+}
+
 void Parser::consume()      { lookahead = scanner.next_token(); }
 
 Json Parser::parse_array() {
