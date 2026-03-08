@@ -1,0 +1,14 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Build
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# Compiled
+*.o
+*.exe
+*.out
