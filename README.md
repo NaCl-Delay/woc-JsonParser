@@ -32,7 +32,7 @@
 ## 项目结构
 
 ```
-JosnParserTry/
+woc-JsonParser/ 
 ├── README.md
 ├── CMakeLists.txt
 ├── .gitignore
