@@ -65,6 +65,7 @@ const Json::object_type& Json::as_object() const{
     return std::get<object_type>(m_value);
 }
 
+
 Json Json::parse(std::string_view source) {
     Parser p(source);
     return p.parse();
@@ -102,6 +103,7 @@ static void write_escaped_string(std::ostringstream& oss, const std::string& s) 
     }
     oss << "\"";
 }
+
 
 void Json::dump_internal(std::ostringstream& oss, int depth, int indent_size) const {
     bool pretty = indent_size >= 0;

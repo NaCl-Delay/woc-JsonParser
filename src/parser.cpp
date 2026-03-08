@@ -93,6 +93,7 @@ static std::string unescape_string(std::string_view raw, int token_line, int tok
     return result;
 }
 
+
 char Scanner::advance() {
     char current = src[cursor];
     if (current == '\n' || current == '\r') { line++; column = 1; }

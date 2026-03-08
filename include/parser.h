@@ -4,7 +4,7 @@
 
 #ifndef JOSNPARSERTRY_PARSER_H
 #define JOSNPARSERTRY_PARSER_H
-#include <stdexcept>
+
 #include <string_view>
 
 #include "json.h"

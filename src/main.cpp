@@ -6,7 +6,7 @@ int main() {
     system("chcp 65001");
 #endif
 
-    // ── 1. 解析一个完整的 JSON 字符串 ──────────────────────────
+    // 1. 解析一个完整的 JSON 字符串
     Json json = Json::parse(R"({
         "name": "张三",
         "age": 20,
@@ -19,7 +19,7 @@ int main() {
         "remark": null
     })");
 
-    // ── 2. 数据访问 ────────────────────────────────────────────
+    // 2. 数据访问
     std::cout << "=== 数据访问 ===" << std::endl;
     std::cout << "姓名:   " << json["name"].as_string()          << std::endl;
     std::cout << "年龄:   " << json["age"].as_int()              << std::endl;
@@ -28,14 +28,14 @@ int main() {
     std::cout << "城市:   " << json["address"]["city"].as_string() << std::endl;
     std::cout << "备注是否为空: " << (json["remark"].is_null() ? "是" : "否") << std::endl;
 
-    // ── 3. 序列化 ──────────────────────────────────────────────
+    //3. 序列化
     std::cout << "\n=== 序列化（紧凑）===" << std::endl;
     std::cout << json.dump() << std::endl;
 
     std::cout << "\n=== 序列化（4 空格缩进）===" << std::endl;
     std::cout << json.dump(4) << std::endl;
 
-    // ── 4. 错误处理示例 ────────────────────────────────────────
+    // 4. 错误处理示例
     std::cout << "=== 错误处理 ===" << std::endl;
     try {
         Json::parse("{bad json}");

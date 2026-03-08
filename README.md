@@ -6,6 +6,7 @@
 
 ## 功能列表
 
+
 ### 基础功能
 - 支持 JSON 六种基本类型：`null`、`boolean`、`number`、`string`、`array`、`object`
 - 完整的转义字符处理：`\n`、`\t`、`\"`、`\\`、`\uXXXX`（含 Unicode 代理对）
