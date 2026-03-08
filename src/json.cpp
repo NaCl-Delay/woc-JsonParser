@@ -44,9 +44,9 @@ const Json::array_type& Json::as_array() const {
 }
 
 // 对象键值访问
+// 访问 null 时自动变成 object
 Json& Json::operator[](const std::string& key) {
     if (!is_object()) {
-        // 进阶技巧：如果原本是 null，访问 key 时自动变成 object
         if (is_null()) {
             m_type = Type::Object;
             m_value = object_type();
